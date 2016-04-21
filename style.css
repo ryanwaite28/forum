@@ -1,0 +1,70 @@
+/* New Style */
+hr {
+  border-color: grey;
+}
+
+.topbar {
+
+}
+
+.top-text {
+  margin: 0px;
+  height: 100px;
+  line-height: 100px;
+  vertical-align: middle;
+}
+
+.brd-1 {
+  border: 1px solid black;
+}
+
+
+.brd-2 {
+  border-bottom: 1px solid black;
+}
+
+#newpost-username , #newpost-textbody {
+  width: 70%;
+
+}
+
+.feed {
+  padding: 0px;
+  margin: 0px;
+  width: 100%;
+}
+.feed li {
+  width: 100%;
+  padding: 20px;
+  list-style: none;
+  display: block;
+}
+
+.feed li span {
+  padding: 5px;
+  margin: 10px;
+}
+
+#edit-modal {
+  position: absolute;
+  top: 20vh;
+  left: 0px;
+  right: 0px;
+  width: 50%;
+  min-height: 30vh;
+  color: black;
+  margin: auto;
+  border: solid;
+  padding: 1em;
+  background: white;
+}
+
+#edit-modal {
+  position: relative;
+}
+
+#closer {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+}

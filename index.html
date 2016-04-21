@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+
+<html>
+
+	<head>
+
+		<title>Forum</title>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1"/>
+		<link rel="stylesheet" type="text/css" href="http://ryanwaite28.github.io/my-cdn/css/bootstrap.css"/>
+		<link rel="stylesheet" type="text/css" href="http://ryanwaite28.github.io/my-cdn/css/emerald.css"/>
+		<link rel="stylesheet" type="text/css" href="style.css"/>
+		<link rel="stylesheet" type="text/css" media="only screen and (max-width: 785px)" href="mobile-style.css">
+		<link rel="icon" type="image/" href=""/>
+		<script src="http://ryanwaite28.github.io/my-cdn/js/angular.js"></script>
+		<script src="http://ryanwaite28.github.io/my-cdn/js/jquery.js"></script>
+		<script src="http://ryanwaite28.github.io/my-cdn/js/emerald.js"></script>
+		<script src="script.js"></script>
+
+	</head>
+
+	<body ng-app="myApp" ng-controller="masterCtrl">
+
+		<div class="topbar brd-2">
+
+			<div class="">
+				<h1 class="text-center top-text">Forum</h1>
+			</div>
+
+			<div class="">
+				<h2 class="text-center">{{}}</h2>
+			</div>
+
+			<div class="">
+
+			</div>
+
+		</div>
+
+		<div class="container-fluid mainbox-t">
+
+			<br><br>
+
+			<div class="row">
+
+				<div class="col-md-4" style="margin-bottom: 20px;">
+					<div class="middlr brd-1">
+						<h3 class="text-center">Post</h3>
+						<hr>
+						<input id="newpost-username" class="middlr" type="text" placeholder="UserName"/>
+						<br>
+						<textarea style="margin: auto; width: 85%; min-height: 200px;" class="middlr" id="newpost-textbody" placeholder="Text"></textarea>
+						<br>
+						<input class="middlr" id="submit-btn" type="button" value="Submit" ng-click="addPost()"/>
+						<br>
+						<p class="text-center"><b>{{msg1}}</b></p>
+						<br>
+					</div>
+
+					<dialog id="edit-modal" close>
+						<a href="#">
+							<span id="closer" class="glyphicon glyphicon-remove" ng-click="closeEditPost()"></span>
+						</a>
+						<h3 class="text-center">Edit Post</h3>
+						<hr>
+						<textarea style="margin: auto; width: 85%; min-height: 200px;" class="middlr" id="editpost-textbody" placeholder="Text"></textarea>
+						<br>
+						<input class="middlr" id="Esubmit-btn" type="button" value="Submit" ng-click="editPost()"/>
+						<br>
+						<p class="text-center"><b>{{msg2}}</b></p>
+						<br>
+					</dialog>
+				</div>
+
+				<div class="col-md-8" style="margin-bottom: 20px;">
+					<div class="middlr brd-1">
+						<h3 class="text-center">Feed</h3>
+						<hr>
+						<ul class="feed">
+							<li class="brd-2" ng-repeat="post in feed | orderBy : '-postDate'">
+								<h4>{{post.userName}}</h4>
+								<p>{{post.textBody}}</p>
+								<a href="#"><span class="glyphicon glyphicon-pencil" ng-click="openEditor(post)"></span></a>
+								<a href="#"><span class="glyphicon glyphicon-trash" ng-click="deletePost(post)"></span></a>
+								<br>
+								<p class="text-right"><b>Post Created:</b><br><em>{{post.postDate}}</em.</p><br>
+								<p class="text-right"><b>Lase Edited:</b><br><em>{{post.lastEdited}}</em.</p>
+							</li>
+						</ul>
+					</div>
+				</div>
+
+			</div>
+
+		</div>
+
+	</body>
+
+</html>
