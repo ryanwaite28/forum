@@ -80,11 +80,12 @@
 							<li class="brd-2" ng-repeat="post in feed | orderBy : '-postDate'">
 								<h4>{{post.userName}}</h4>
 								<p>{{post.textBody}}</p>
-								<a href="#"><span class="glyphicon glyphicon-pencil" ng-click="openEditor(post)"></span></a>
-								<a href="#"><span class="glyphicon glyphicon-trash" ng-click="deletePost(post)"></span></a>
-								<br>
+								<br><br>
 								<p class="text-right"><b>Post Created:</b><br><em>{{post.postDate}}</em.</p><br>
 								<p class="text-right"><b>Lase Edited:</b><br><em>{{post.lastEdited}}</em.</p>
+								<hr>
+								<a class="p-btn" href="#" ng-click="openEditor(post)">Edit<span class="glyphicon glyphicon-pencil"></span></a>
+								<a class="p-btn" href="#" ng-click="deletePost(post)">Delete<span class="glyphicon glyphicon-trash"></span></a>
 							</li>
 						</ul>
 					</div>
