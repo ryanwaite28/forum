@@ -46,6 +46,8 @@ App.controller('masterCtrl', function($scope) {
 
 		document.getElementById("edit-modal").showModal();
 
+		$scope.currentUserName = post.userName;
+
 		$('#editpost-textbody').val(post.textBody);
 
 		$scope.editPost = function() {
