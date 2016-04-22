@@ -34,6 +34,11 @@ App.controller('masterCtrl', function($scope) {
 		$('#newpost-textbody').val('');
 
 		// console.log('Post Added.');
+		$scope.msg1 = 'Post Added!';
+		setTimeout( function() {
+			$scope.msg1 = '';
+			$scope.$apply();
+		} , 3000 );
 
 	}
 
@@ -60,6 +65,12 @@ App.controller('masterCtrl', function($scope) {
 			post.lastEdited = Date();
 
 			document.getElementById("edit-modal").close();
+
+			$scope.msg1 = 'Post Updated!';
+			setTimeout( function() {
+				$scope.msg1 = '';
+				$scope.$apply();
+			} , 3000 );
 
 			return post;
 
@@ -101,6 +112,11 @@ App.controller('masterCtrl', function($scope) {
 		}
 
 		// console.log('Post Deleted.');
+		$scope.msg1 = 'Post Deleted!';
+		setTimeout( function() {
+			$scope.msg1 = '';
+			$scope.$apply();
+		} , 3000 );
 
 	}
 
